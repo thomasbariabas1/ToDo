@@ -41,13 +41,18 @@ const Todo = (props) => {
             addTodo(newTodo)
         }
     };
+    const onKeyPressAddTodo = (e) =>{
+        if (e.keyCode === 13) {
+            addNewTodo()
+        }
+    }
     const addNewDueDate = () => {
         if (!newTodo.completed)
             onChange({target: {name: 'dueDate', value: moment().format('YYYY-MM-DD')}})
     };
 
     const addNewDueDateComponent = <span style={newTodo.completed ? {cursor: 'auto'} : {}}
-                                         data-testId={dataTestId + '-dueDate'}
+                                         data-testid={dataTestId + '-dueDate'}
                                          className={classes.newDueDateComponent}
                                          onClick={addNewDueDate}>Add due date</span>;
 
@@ -62,7 +67,7 @@ const Todo = (props) => {
                     dataTestId={dataTestId + '-dueDate'}
                     onChange={onChange}/>);
 
-    return <div className={classes.todo} data-testId={'todo'} onBlur={addNewTodo}>
+    return <div className={classes.todo} data-testid={'todo'} onBlur={addNewTodo}>
         {id != null && <CustomCheckbox dataTestId={dataTestId + '-complete'}
                                        value={newTodo.completed}
                                        name={'completed'}
@@ -74,11 +79,12 @@ const Todo = (props) => {
                          name={'content'}
                          placeholder={placeholder}
                          onChange={onChange}
+                         onKeypress={onKeyPressAddTodo}
                          dataTestId={dataTestId}
             />
             {id != null && dateComponent}
             {id != null &&
-            <div className={classes.iconWrapper} data-testId={dataTestId + '-delete'} onClick={() => deleteTodo(id)}>
+            <div className={classes.iconWrapper} data-testid={dataTestId + '-delete'} onClick={() => deleteTodo(id)}>
                 <FaTrash/>
             </div>}
         </div>

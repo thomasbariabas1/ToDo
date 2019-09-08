@@ -22,7 +22,7 @@ const TodoView = ({todos, addTodo, editTodo, deleteTodo, completeTodo, showModal
             close={closeModal}>
             Maybe aircrafts fly very high because they don't want to be seen in plane sight?
         </Modal>
-        <div data-testId={'todos'}>{todosComponent}</div>
+        <div data-testid={'todos'}>{todosComponent}</div>
         <Todo dataTestId={'add-todo'} addTodo={addTodo} todo={{id: null, placeholder: 'add new todo'}}/>
     </div>)
 }

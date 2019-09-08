@@ -4,7 +4,7 @@ import {TextField} from "../../assets/jss/Inputs";
 
 
 const CustomInput = ({value = '', label, name, onChange=()=>{},
-                         dataTestId, placeholder='', disabled, classes}) =>{
+                         dataTestId, placeholder='', onKeypress, disabled, classes}) =>{
 
     return <input className={classes.input}
                   placeholder={placeholder}
@@ -13,7 +13,8 @@ const CustomInput = ({value = '', label, name, onChange=()=>{},
                   value={value}
                   name={name}
                   disabled={disabled}
-                  data-testId={dataTestId}/>
+                  onKeyUp={onKeypress}
+                  data-testid={dataTestId}/>
 }
 
 export default injectSheet(TextField)(CustomInput)

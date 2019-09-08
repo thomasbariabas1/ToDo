@@ -13,7 +13,7 @@ const CustomCheckbox= ({value = '', name,  onChange=()=>{}, dataTestId,  classes
                   name={name}
                   className={classes.checkbox}
                   onChange={onCheckboxChange}
-                  data-testId={dataTestId}
+                  data-testid={dataTestId}
                   checked={value}/>
 };
 

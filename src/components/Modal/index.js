@@ -9,7 +9,7 @@ const Modal = (props) => {
     const {show, close, children, dataTestId, classes} = props
     return (show ?
             ReactDOM.createPortal(
-                <div className={classes.modal} data-testId={dataTestId}>
+                <div className={classes.modal} data-testid={dataTestId}>
                     <div className={classes.modalContent}>
                         Congratulation on completing 3 Tasks today!
                         <Button onClick={close} dataTestId={dataTestId + '-close-button'}

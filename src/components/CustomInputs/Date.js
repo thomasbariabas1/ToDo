@@ -12,7 +12,7 @@ const CustomDate = ({value = '', label, name, onChange=()=>{}, onBlur, disabled,
                   onChange={onChange}
                   value={value}
                   disabled={disabled}
-                  data-testId={dataTestId}
+                  data-testid={dataTestId}
                   />
 }
 
