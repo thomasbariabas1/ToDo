@@ -10,15 +10,15 @@ import {FaTrash} from 'react-icons/fa';
 
 const Todo = (props) => {
 
-    const {classes, deleteTodo, editTodo, addTodo, completeTodo, todo} = props;
-    const {dueDate, placeholder, content, id, completed} = todo;
+    const {classes, deleteTodo, editTodo, addTodo, completeTodo, dataTestId, todo} = props;
+    const {placeholder, id, completed} = todo;
 
     const [newTodo, setNewTodo] = useState(todo)
 
     useEffect(() => {
         setNewTodo(todo)
     }, [todo])
-    console.log('newTodo', newTodo)
+
     // const showDate = (id == null && focus || id != null && focus || (id != null && dueDate));
     const inputContainerClasses = className({
         [classes.inputContainer]: true,
@@ -32,7 +32,7 @@ const Todo = (props) => {
             setNewTodo({...newTodo, [name]: value})
         }
     };
-    const onComplete = ({target: {name, value}}) =>{
+    const onComplete = ({target: {name, value}}) => {
         completeTodo({...todo, [name]: value})
     }
 
@@ -46,7 +46,8 @@ const Todo = (props) => {
             onChange({target: {name: 'dueDate', value: moment().format('YYYY-MM-DD')}})
     };
 
-    const addNewDueDateComponent = <span style={newTodo.completed?{cursor:'auto'}:{}}
+    const addNewDueDateComponent = <span style={newTodo.completed ? {cursor: 'auto'} : {}}
+                                         data-testId={dataTestId + '-dueDate'}
                                          className={classes.newDueDateComponent}
                                          onClick={addNewDueDate}>Add due date</span>;
 
@@ -58,19 +59,26 @@ const Todo = (props) => {
         <CustomDate value={newTodo.dueDate}
                     disabled={completed}
                     name={'dueDate'}
+                    dataTestId={dataTestId + '-dueDate'}
                     onChange={onChange}/>);
 
-    return <div className={classes.todo} onBlur={addNewTodo}>
-        {id != null && <CustomCheckbox value={newTodo.completed} name={'completed'} onChange={onComplete}/>}
+    return <div className={classes.todo} data-testId={'todo'} onBlur={addNewTodo}>
+        {id != null && <CustomCheckbox dataTestId={dataTestId + '-complete'}
+                                       value={newTodo.completed}
+                                       name={'completed'}
+                                       onChange={onComplete}/>}
         {id != null && <div className={classes.lineSeparator}/>}
         <div className={inputContainerClasses}>
             <CustomInput value={newTodo.content}
                          disabled={completed}
                          name={'content'}
                          placeholder={placeholder}
-                         onChange={onChange}/>
+                         onChange={onChange}
+                         dataTestId={dataTestId}
+            />
             {id != null && dateComponent}
-            {id != null && <div className={classes.iconWrapper} onClick={() => deleteTodo(id)}>
+            {id != null &&
+            <div className={classes.iconWrapper} data-testId={dataTestId + '-delete'} onClick={() => deleteTodo(id)}>
                 <FaTrash/>
             </div>}
         </div>

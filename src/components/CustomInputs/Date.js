@@ -3,7 +3,7 @@ import injectSheet from 'react-jss'
 import {DatePicker} from "../../assets/jss/Inputs";
 
 
-const CustomDate = ({value = '', label, name, onChange=()=>{}, onBlur, disabled, classes}) =>{
+const CustomDate = ({value = '', label, name, onChange=()=>{}, onBlur, disabled, dataTestId, classes}) =>{
 
     return <input type={'date'}
                   name={name}
@@ -12,6 +12,7 @@ const CustomDate = ({value = '', label, name, onChange=()=>{}, onBlur, disabled,
                   onChange={onChange}
                   value={value}
                   disabled={disabled}
+                  data-testId={dataTestId}
                   />
 }
 

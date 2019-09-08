@@ -6,18 +6,19 @@ import Button from '../../components/CustomButton'
 import {ButtonStyles} from "../../assets/jss/Button";
 
 const Modal = (props) => {
-    const {show, close, children, classes} = props
-    return (show?
-        ReactDOM.createPortal(
-            <div className={classes.modal}>
-                <div className={classes.modalContent}>
-                   Congratulation on completing 3 Tasks today!
-                    <Button onClick={close} className={classes.modalButton}>Close</Button>
-                </div>
-            </div>,
-            document.querySelector("#modal")
-        ):null
+    const {show, close, children, dataTestId, classes} = props
+    return (show ?
+            ReactDOM.createPortal(
+                <div className={classes.modal} data-testId={dataTestId}>
+                    <div className={classes.modalContent}>
+                        Congratulation on completing 3 Tasks today!
+                        <Button onClick={close} dataTestId={dataTestId + '-close-button'}
+                                className={classes.modalButton}>Close</Button>
+                    </div>
+                </div>,
+                document.querySelector("#modal")
+            ) : null
     )
 }
 
-export default injectSheet({...ModalStyle, modalButton:ButtonStyles.modalButton})(Modal);
+export default injectSheet({...ModalStyle, modalButton: ButtonStyles.modalButton})(Modal);

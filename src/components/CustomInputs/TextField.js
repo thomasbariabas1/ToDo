@@ -3,7 +3,8 @@ import injectSheet from 'react-jss'
 import {TextField} from "../../assets/jss/Inputs";
 
 
-const CustomInput = ({value = '', label, name, onChange=()=>{}, onBlur, placeholder='', disabled, classes}) =>{
+const CustomInput = ({value = '', label, name, onChange=()=>{},
+                         dataTestId, placeholder='', disabled, classes}) =>{
 
     return <input className={classes.input}
                   placeholder={placeholder}
@@ -11,7 +12,8 @@ const CustomInput = ({value = '', label, name, onChange=()=>{}, onBlur, placehol
                   onChange={onChange}
                   value={value}
                   name={name}
-                  disabled={disabled}/>
+                  disabled={disabled}
+                  data-testId={dataTestId}/>
 }
 
 export default injectSheet(TextField)(CustomInput)

@@ -3,7 +3,7 @@ import injectSheet from 'react-jss'
 import {Checkbox} from "../../assets/jss/Inputs";
 
 
-const CustomCheckbox= ({value = '', name,  onChange=()=>{},  classes}) =>{
+const CustomCheckbox= ({value = '', name,  onChange=()=>{}, dataTestId,  classes}) =>{
 
     const onCheckboxChange = ({target: {name, checked}}) => {
         onChange({target: {name, value: checked}})
@@ -13,6 +13,7 @@ const CustomCheckbox= ({value = '', name,  onChange=()=>{},  classes}) =>{
                   name={name}
                   className={classes.checkbox}
                   onChange={onCheckboxChange}
+                  data-testId={dataTestId}
                   checked={value}/>
 };
 
