@@ -10,6 +10,7 @@ ToDo is an application for add,edit,complete and delete todos.
 >   * [Installation](#installation)
 >   * [Usage](#usage)
 >     * [Screenshots](#screenshots)
+>   * [Packages](#Extra Packages)
 >   * [Testing](#Testing)
 >     * [Cypress](#Cypress)
 >     * [Jest](#Jest)
@@ -20,6 +21,7 @@ ToDo is an application for add,edit,complete and delete todos.
 To run this application locally, you must have installed into your machine [node.js](https://nodejs.org/en/).
 
 ## Installation
+To run this app locally, you must first clone it with `git clone https://github.com/thomasbariabas1/ToDo.git` terminal command.
 To start this application locally, just run `npm start` into the terminal.
 Make sure that dependencies has been installed with `npm install` before trying to start the application.
 
@@ -50,7 +52,12 @@ When the user complete 3 todos:
 ![complete_3_todos](./screenshots/complete_3_todos.png)
 
 
-
+## Extra Packages
+The application uses the following extra packages:
+* [react-jss](https://cssinjs.org/react-jss/?v=v10.0.0-alpha.24)  convert the javascript object to css. known as jss.
+* [react-icons](https://github.com/react-icons/react-icons#readme) has icons from known sources as fontawesome
+* [moment](https://momentjs.com/) used for dates
+* [classnames](https://github.com/JedWatson/classnames) a utility for classname pick
 
 ## Testing
 

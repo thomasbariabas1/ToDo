@@ -6,12 +6,6 @@ export const ToDosStyle = {
         display: 'flex',
         alignItems: 'center'
     },
-    lineSeparator:{
-        width:2,
-        borderLeft: '1px solid #ffaa9f',
-        borderRight: '1px solid #ffaa9f',
-        marginRight:'5px'
-    },
     inputContainer:{
         position:'relative',
         display: 'flex',

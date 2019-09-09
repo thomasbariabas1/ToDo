@@ -50,14 +50,14 @@ const Todo = (props) => {
         if (!newTodo.completed)
             onChange({target: {name: 'dueDate', value: moment().format('YYYY-MM-DD')}})
     };
-
+    //Show the test Add due date and in case the user click it change to date picker
     const addNewDueDateComponent = <span style={newTodo.completed ? {cursor: 'auto'} : {}}
                                          data-testid={dataTestId + '-dueDate'}
                                          className={classes.newDueDateComponent}
                                          onClick={addNewDueDate}>Add due date</span>;
 
 
-    //In case there isn't any due date, show him text to add one
+    //In case there isn't any due date, show him the addNewDueDateComponent otherwise the date picker
     const dateComponent = (!newTodo.dueDate ?
         addNewDueDateComponent
         :
@@ -68,11 +68,13 @@ const Todo = (props) => {
                     onChange={onChange}/>);
 
     return <div className={classes.todo} data-testid={'todo'} onBlur={addNewTodo}>
+        {/*The checkbox that used to complete a todo*/}
         {id != null && <CustomCheckbox dataTestId={dataTestId + '-complete'}
                                        value={newTodo.completed}
                                        name={'completed'}
                                        onChange={onComplete}/>}
-        {id != null && <div className={classes.lineSeparator}/>}
+
+        {/*The checkbox that used to complete a todo*/}
         <div className={inputContainerClasses}>
             <CustomInput value={newTodo.content}
                          disabled={completed}
@@ -82,7 +84,11 @@ const Todo = (props) => {
                          onKeypress={onKeyPressAddTodo}
                          dataTestId={dataTestId}
             />
+
+            {/*The  date picker that used to add due date to the  todo*/}
             {id != null && dateComponent}
+
+            {/*The icon that used to delete a todo*/}
             {id != null &&
             <div className={classes.iconWrapper} data-testid={dataTestId + '-delete'} onClick={() => deleteTodo(id)}>
                 <FaTrash/>
