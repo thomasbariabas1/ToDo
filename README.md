@@ -10,7 +10,7 @@ ToDo is an application for add,edit,complete and delete todos.
 >   * [Installation](#installation)
 >   * [Usage](#usage)
 >     * [Screenshots](#screenshots)
->   * [Packages](#Extra Packages)
+>   * [Packages](#Extra-Packages)
 >   * [Testing](#Testing)
 >     * [Cypress](#Cypress)
 >     * [Jest](#Jest)
