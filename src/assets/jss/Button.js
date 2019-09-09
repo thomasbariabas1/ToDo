@@ -16,9 +16,10 @@ export const ButtonStyles = {
         }
     },
     modalButton:{
-        position:'absolute',
-        bottom:'10px',
-        right:'30px',
+
+        marginLeft:'auto',
+        marginRight:'auto',
+        marginTop:'auto',
         borderRadius:'12px'
     }
 }

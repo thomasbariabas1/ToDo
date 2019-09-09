@@ -2,10 +2,10 @@ import View from './view'
 import {connect} from "react-redux";
 import {actions} from "../../redux-store/actions/ToDoActions";
 
-const mapStateToProps = (state)=>{
+const mapStateToProps = (state) => {
     return {
-        todos:state.ToDoReducer.todos,
-        showModal:state.ToDoReducer.showModal
+        todos: state.ToDoReducer.todos,
+        showModal: state.ToDoReducer.showModal
     }
 }
 

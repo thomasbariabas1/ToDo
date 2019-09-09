@@ -34,8 +34,10 @@ export const ModalStyle = {
         display: 'flex'
     },
     modalContent: {
-        minHeight:'300px',
-        width:'400px',
+        minHeight: '100px',
+        maxHeight: '600px',
+        minWidth: '200px',
+        maxWidth: '400px',
         position: 'absolute',
         zIndex: 1001,
         textAlign: 'left',
@@ -55,7 +57,7 @@ export const ModalStyle = {
         userSelect: 'text',
         willChange: 'top,left,margin,transform,opacity',
         display: 'flex',
-        padding:'10px',
+        padding: '20px',
         flexDirection: 'column'
     }
 }

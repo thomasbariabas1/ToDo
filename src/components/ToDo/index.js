@@ -5,7 +5,7 @@ import injectSheet from 'react-jss'
 import {ToDosStyle} from "../../assets/jss/ToDos";
 import CustomInput from '../CustomInputs/TextField'
 import CustomCheckbox from "../CustomInputs/CheckBox";
-import CustomDate from "../CustomInputs/Date";
+import CustomDate from "../CustomInputs/DatePicker";
 import {FaTrash} from 'react-icons/fa';
 
 const Todo = (props) => {
@@ -41,7 +41,7 @@ const Todo = (props) => {
             addTodo(newTodo)
         }
     };
-    const onKeyPressAddTodo = (e) =>{
+    const onKeyPressAddTodo = (e) => {
         if (e.keyCode === 13) {
             addNewTodo()
         }
