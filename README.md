@@ -17,7 +17,7 @@ ToDo is an application for add,edit,complete and delete todos.
 >    
 
 ## Requirements
-To run this application locally, you must have installed into you machine [node.js](https://nodejs.org/en/).
+To run this application locally, you must have installed into your machine [node.js](https://nodejs.org/en/).
 
 ## Installation
 To start this application locally, just run `npm start` into the terminal.
