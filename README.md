@@ -1,68 +1,74 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ToDo
 
-## Available Scripts
+ToDo is an application for add,edit,complete and delete todos.
 
-In the project directory, you can run:
 
-### `npm start`
+## Table of contents
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> * [ToDo](#ToDo)
+>   * [Requirements](#Requirements)
+>   * [Installation](#installation)
+>   * [Usage](#usage)
+>     * [Screenshots](#screenshots)
+>   * [Testing](#Testing)
+>     * [Cypress](#Cypress)
+>     * [Jest](#Jest)
+>   * [Build](#build)
+>    
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Requirements
+To run this application locally, you must have installed into you machine [node.js](https://nodejs.org/en/).
 
-### `npm test`
+## Installation
+To start this application locally, just run `npm start` into the terminal.
+Make sure that dependencies has been installed with `npm install` before trying to start the application.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Usage
+When the page first loads, the user will see a empty row that says Add new todo. The user can add a todo either with 
+blurring the field or pressing enter. The user can edit the todo simply by clicking on it. The user can add due date to 
+todo my clicking the Add DueDate button. The user can complete/un-complete a Todo by checking his checkbox on the left side of todo. 
+Last user can delete a todo my hitting the trash icon on the right side of the todo. When the user completes 3 todos, 
+a modal appears that congrats the user.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Screenshots
+When the page load first time:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+![launch_page](./screenshots/launch_page.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When the user add a todo:
+![add_todo](./screenshots/add_todo.png)
 
-### `npm run eject`
+When the user add due date to the todo:
+![add_due_date](./screenshots/add_due_date.png)
+![add_due_date_calendar](./screenshots/add_due_date_calendar.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+When the user complete a todo:
+![complete_todo](./screenshots/complete_todo.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+When the user complete 3 todos:
+![complete_3_todos](./screenshots/complete_3_todos.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Testing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application uses [cypress](https://www.cypress.io/) for end-to-end test and [jest](https://jestjs.io/) for unit test.
 
-### Code Splitting
+### Cypress
+To run the end-to-end tests, run into the console `npm run cypress:open` and on the cypress panel select the `add-todo.spec.js`
+and it will run the test automatically. 
+> *The application must be running for the tests to begin.*
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+![cypress_test](./screenshots/cypress_test.png)
 
-### Analyzing the Bundle Size
+### Jest
+To run the unit tests, run into console `npm run test`.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Build
 
-### Making a Progressive Web App
+To build this application, run `npm run build` into the console and when the build ends, a `build` folder will appear with all the 
+static files.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
